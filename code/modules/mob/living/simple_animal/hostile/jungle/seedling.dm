@@ -29,7 +29,7 @@
 	projectiletype = /obj/projectile/seedling
 	projectilesound = 'sound/weapons/pierce.ogg'
 	robust_searching = TRUE
-	stat_attack = HARD_CRIT
+	stat_attack = CONSCIOUS
 	environment_smash = ENVIRONMENT_SMASH_WALLS
 	move_resist = MOVE_FORCE_EXTREMELY_STRONG
 	var/combatant_state = SEEDLING_STATE_NEUTRAL
@@ -126,25 +126,26 @@
 		update_icons()
 		var/target_dist = get_dist(src,target)
 		var/living_target_check = isliving(target)
-		if(living_target_check)
-			if(target_dist > 7)//Offscreen check
-				SolarBeamStartup(target)
-				return
-			if(get_dist(src,target) >= 4 && prob(40))
-				SolarBeamStartup(target)
-				return
+		//if(living_target_check)
+			//if(target_dist > 7)//Offscreen check
+				//SolarBeamStartup(target)
+			//return
+			//if(get_dist(src,target) >= 4 && prob(40))
+				//SolarBeamStartup(target)
+				//return
 		addtimer(CALLBACK(src, PROC_REF(Volley)), 5)
 
-/mob/living/simple_animal/hostile/jungle/seedling/proc/SolarBeamStartup(mob/living/living_target)//It's more like requiem than final spark
-	if(combatant_state == SEEDLING_STATE_WARMUP && target)
-		combatant_state = SEEDLING_STATE_ACTIVE
-		living_target.apply_status_effect(/datum/status_effect/seedling_beam_indicator, src)
-		beam_debuff_target = living_target
-		playsound(src,'sound/effects/seedling_chargeup.ogg', 100, FALSE)
-		if(get_dist(src,living_target) > 7)
-			playsound(living_target,'sound/effects/seedling_chargeup.ogg', 100, FALSE)
-		solar_beam_identifier = world.time
-		addtimer(CALLBACK(src, PROC_REF(Beamu), living_target, solar_beam_identifier), 35)
+// You're not an orbital deathray.
+//mob/living/simple_animal/hostile/jungle/seedling/proc/SolarBeamStartup(mob/living/living_target)//It's more like requiem than final spark
+	//if(combatant_state == SEEDLING_STATE_WARMUP && target)
+		//combatant_state = SEEDLING_STATE_ACTIVE
+		//living_target.apply_status_effect(/datum/status_effect/seedling_beam_indicator, src)
+		//beam_debuff_target = living_target
+		//playsound(src,'sound/effects/seedling_chargeup.ogg', 100, FALSE)
+		//if(get_dist(src,living_target) > 7)
+		//	playsound(living_target,'sound/effects/seedling_chargeup.ogg', 100, FALSE)
+		//solar_beam_identifier = world.time
+		//addtimer(CALLBACK(src, PROC_REF(Beamu), living_target, solar_beam_identifier), 35)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/Beamu(mob/living/living_target, beam_id = 0)
 	if(combatant_state == SEEDLING_STATE_ACTIVE && living_target && beam_id == solar_beam_identifier)
