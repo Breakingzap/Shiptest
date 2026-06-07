@@ -279,7 +279,7 @@
 	return TRUE
 
 /obj/structure/closet/welder_act(mob/living/user, obj/item/tool, modifiers)
-	if(user.a_intent == INTENT_HARM && !LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(user.a_intent == INTENT_HARM)
 		return FALSE
 	if(!tool.tool_start_check(user, amount=0))
 		return FALSE
@@ -310,7 +310,7 @@
 	return FALSE
 
 /obj/structure/closet/wirecutter_act(mob/living/user, obj/item/tool, modifiers)
-	if(user.a_intent != INTENT_HELP && !LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(user.a_intent == INTENT_HARM)
 		return FALSE
 	if(tool.tool_behaviour != cutting_tool)
 		return FALSE
@@ -320,7 +320,7 @@
 	return TRUE
 
 /obj/structure/closet/wrench_act(mob/living/user, obj/item/tool, modifiers)
-	if(user.a_intent != INTENT_HELP && !LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(user.a_intent == INTENT_HARM)
 		return FALSE
 	if(!anchorable)
 		return FALSE
@@ -333,9 +333,12 @@
 		span_italics("You hear a ratchet."))
 	return TRUE
 
-/obj/structure/closet/tool_act(mob/living/user, obj/item/I, tool_type)
+/obj/structure/closet/tool_act(mob/living/user, obj/item/tool, tool_type, params)
 	if(user in src)
 		return FALSE
+	var/list/modifiers = params2list(params)
+	if(opened && !LAZYACCESS(modifiers, RIGHT_CLICK) && user.transferItemToLoc(tool, drop_location()))
+		return TRUE
 	return ..()
 
 /obj/structure/closet/deconstruct_act(mob/living/user, obj/item/tool)
@@ -549,15 +552,16 @@
 			if(!locked)
 				open()
 
-/obj/structure/closet/contents_explosion(severity, target)
+/obj/structure/closet/contents_explosion(severity, target,light_dam = EX_LIGHT_BASE_DAM, light_item_dam = EX_LIGHT_BASE_ITEM_DAM, heavy_dam = EX_HEAVY_BASE_DAM, heavy_item_dam = EX_HEAVY_BASE_ITEM_DAM)
 	for(var/atom/A in contents)
+		var/list/to_explode = list(A,light_dam,light_item_dam,heavy_dam,heavy_item_dam)
 		switch(severity)
 			if(EXPLODE_DEVASTATE)
-				SSexplosions.highobj += A
+				SSexplosions.highobj += list(to_explode)
 			if(EXPLODE_HEAVY)
-				SSexplosions.medobj += A
+				SSexplosions.medobj += list(to_explode)
 			if(EXPLODE_LIGHT)
-				SSexplosions.lowobj += A
+				SSexplosions.lowobj += list(to_explode)
 
 /obj/structure/closet/singularity_act()
 	dump_contents()

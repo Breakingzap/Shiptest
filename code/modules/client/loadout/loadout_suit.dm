@@ -19,13 +19,25 @@
 	display_name = "bomber jacket"
 	path = /obj/item/clothing/suit/jacket
 
+/datum/gear/suit/jacket/baggy
+	display_name = "baggy shirt"
+	path = /obj/item/clothing/suit/jacket/baggy
+
 /datum/gear/suit/jacket/leather
 	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
 
+/datum/gear/suit/jacket/leather/coat
+	display_name = "leather coat"
+	path = /obj/item/clothing/suit/jacket/leather/coat
+
 /datum/gear/suit/jacket/leather/duster
 	display_name = "leather duster"
 	path = /obj/item/clothing/suit/jacket/leather/duster
+
+/datum/gear/suit/jacket/leather/blackduster
+	display_name = "black leather duster"
+	path = /obj/item/clothing/suit/jacket/leather/duster/black
 
 /datum/gear/suit/jacket/military
 	display_name = "military jacket"
@@ -42,6 +54,10 @@
 /datum/gear/suit/jacket/navy
 	display_name = "suit jacket, navy"
 	path = /obj/item/clothing/suit/lawyer/navy
+
+/datum/gear/suit/toggle/flight
+	display_name = "flight jacket, colorable"
+	path = /obj/item/clothing/suit/toggle/flight
 
 /datum/gear/suit/jacket/charcoal
 	display_name = "suit jacket, charcoal"
@@ -63,6 +79,14 @@
 	display_name = "hoodie, black w grey hood"
 	path = /obj/item/clothing/suit/hooded/hoodie/blackwa
 
+/datum/gear/suit/jacket/cropped_hoodie
+	display_name = "cropped hoodie, recolorable"
+	path = /obj/item/clothing/suit/hooded/croppedhoodie
+
+/datum/gear/suit/jacket/croppedhoodiealt
+	display_name = "cropped black and white hoodie"
+	path = /obj/item/clothing/suit/hooded/croppedhoodie/blackwa
+
 /datum/gear/suit/jacket/highvis
 	display_name = "industrial jacket"
 	path = /obj/item/clothing/suit/toggle/industrial
@@ -79,9 +103,17 @@
 	display_name = " lime hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard/lime
 
+/datum/gear/suit/overcoat
+	display_name = "overcoat, colorable"
+	path = /obj/item/clothing/suit/toggle/overcoat
+
 /datum/gear/suit/jacket/windbreaker
 	display_name = "windbreaker, colorable"
 	path = /obj/item/clothing/suit/toggle/windbreaker
+
+/datum/gear/suit/jacket/cropped_windbreaker
+	display_name = "cropped windbreaker, colorable"
+	path = /obj/item/clothing/suit/toggle/windbreaker/cropped
 
 /datum/gear/suit/jacket/pufferjacket
 	display_name = "pufferjacket, colorable"

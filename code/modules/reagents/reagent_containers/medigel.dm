@@ -72,7 +72,7 @@
 	else
 		log_combat(user, M, "applied", src, reagents.log_list())
 		playsound(src, 'sound/effects/spray.ogg', 30, TRUE, -6)
-		reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, method = apply_type)
+		reagents.trans_to(M, amount_per_transfer_from_this, transfered_by = user, methods = apply_type)
 	return
 
 /obj/item/reagent_containers/medigel/hadrakine
@@ -96,7 +96,7 @@
 
 /obj/item/reagent_containers/medigel/sterilizine
 	name = "sterilizer gel"
-	desc = "gel bottle loaded with non-toxic sterilizer. Useful in preparation for surgery."
+	desc = "Gel bottle loaded with non-toxic sterilizer. Useful in preparation for surgery."
 	icon_state = "medigel_blue"
 	current_skin = "Blue"
 	list_reagents = list(/datum/reagent/space_cleaner/sterilizine = 60)

@@ -31,6 +31,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "au" = (
@@ -98,7 +99,8 @@
 	},
 /obj/item/storage/guncase/pistol/kalixpistol{
 	pixel_y = -12;
-	pixel_x = -1
+	pixel_x = -1;
+	mag_count = 3
 	},
 /obj/item/clothing/shoes/combat/gezena{
 	pixel_y = -3;
@@ -265,7 +267,8 @@
 	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer4{
 	dir = 8;
-	name = "scrubbers output pump"
+	name = "scrubbers output pump";
+	layer = 2.43
 	},
 /obj/structure/cable/yellow,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -357,6 +360,10 @@
 	dir = 2
 	},
 /obj/machinery/door/airlock/external,
+/obj/effect/turf_decal/techfloor/orange,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 1
+	},
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "dA" = (
@@ -761,6 +768,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/external,
+/obj/effect/turf_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor/orange,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "hP" = (
@@ -798,6 +809,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "iv" = (
@@ -1017,14 +1029,6 @@
 	pixel_y = -7;
 	pixel_x = 8
 	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -8;
-	pixel_y = 7
-	},
-/obj/item/stock_parts/cell/gun/kalix{
-	pixel_x = -8;
-	pixel_y = 7
-	},
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_y = 7;
 	pixel_x = 8
@@ -1036,6 +1040,14 @@
 /obj/item/stock_parts/cell/gun/pgf{
 	pixel_y = -7;
 	pixel_x = 8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 7;
+	pixel_x = -8
+	},
+/obj/item/stock_parts/cell/gun/pgf{
+	pixel_y = 7;
+	pixel_x = -8
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -1075,6 +1087,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "lE" = (
@@ -1176,6 +1189,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
+	},
+/obj/structure/sign/warning/electricshock{
+	pixel_x = -24;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -1432,14 +1449,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/light_switch{
-	pixel_y = 23;
-	pixel_x = 11
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/medical)
 "sK" = (
@@ -1992,7 +2002,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "ze" = (
-/obj/machinery/iv_drip,
 /obj/machinery/light/directional/east,
 /obj/structure/chair/handrail{
 	dir = 8
@@ -2175,10 +2184,22 @@
 "Ds" = (
 /obj/structure/bed/roller,
 /obj/effect/turf_decal/industrial/hatch/blue,
-/obj/machinery/airalarm/directional/north,
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_y = 0;
 	pixel_x = 28
+	},
+/obj/machinery/iv_drip{
+	layer = 2.95;
+	pixel_x = 8;
+	pixel_y = 22
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -12
 	},
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
@@ -2458,6 +2479,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Hi" = (
@@ -2526,6 +2548,10 @@
 /obj/item/stack/sheet/glass/twenty{
 	pixel_y = -2;
 	pixel_x = -2
+	},
+/obj/structure/sign/warning/nosmoking{
+	pixel_y = 0;
+	pixel_x = -25
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2635,10 +2661,6 @@
 	pixel_y = -2;
 	pixel_x = 7
 	},
-/obj/item/multitool{
-	pixel_y = -1;
-	pixel_x = -9
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
@@ -2669,28 +2691,9 @@
 	pixel_x = 0;
 	pixel_y = -28
 	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 10
 	},
-/obj/item/storage/backpack/duffelbag/sec{
-	pixel_y = -12;
-	pixel_x = 7
-	},
-/obj/item/storage/backpack/duffelbag/sec{
-	pixel_y = -12;
-	pixel_x = 7
-	},
-/obj/item/storage/backpack/satchel/sec{
-	pixel_x = -3;
-	pixel_y = -16
-	},
-/obj/item/storage/backpack/satchel/sec{
-	pixel_x = -3;
-	pixel_y = -16
-	},
 /obj/item/clothing/head/gezena/flap/marine{
 	pixel_y = 8;
 	pixel_x = -6
@@ -2739,17 +2742,32 @@
 	pixel_y = -1;
 	pixel_x = 6
 	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 7
+/obj/structure/window/reinforced{
+	dir = 8
 	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 7
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
 	},
-/obj/item/clothing/gloves/gezena/marine{
-	pixel_y = -2;
-	pixel_x = 7
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
+	},
+/obj/item/storage/backpack/satchel/sec/gezena{
+	pixel_x = -8;
+	pixel_y = -12
+	},
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
+	},
+/obj/item/storage/backpack/messenger/sec/gezena{
+	pixel_x = 10;
+	pixel_y = -13
 	},
 /obj/item/clothing/neck/cloak/gezena{
 	pixel_x = -2;
@@ -2762,6 +2780,34 @@
 /obj/item/clothing/neck/cloak/gezena{
 	pixel_x = -2;
 	pixel_y = 0
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 7
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 7
+	},
+/obj/item/clothing/gloves/gezena/marine{
+	pixel_y = -2;
+	pixel_x = 7
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 2;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 2;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/security/gezena{
+	pixel_x = 2;
+	pixel_y = -15
+	},
+/obj/item/storage/backpack/duffelbag{
+	pixel_x = 1;
+	pixel_y = -10
 	},
 /obj/item/clothing/shoes/combat/gezena/marine{
 	pixel_y = -10;
@@ -2944,13 +2990,13 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
 "LD" = (
-/obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/gezena,
 /obj/item/clothing/head/helmet/space/gezena,
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
 /obj/item/tank/internals/oxygen/red,
+/obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/hallway/fore)
 "LH" = (
@@ -2997,7 +3043,8 @@
 	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 8;
-	name = "distribution output pump"
+	name = "distribution output pump";
+	layer = 2.43
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -3196,7 +3243,8 @@
 	pixel_y = 8
 	},
 /obj/machinery/atmospherics/components/binary/pump{
-	dir = 1
+	dir = 1;
+	layer = 2.43
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
@@ -3246,7 +3294,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel,
 /area/ship/medical)
@@ -3283,10 +3331,8 @@
 	disable_on_owner_ship_dock = 1
 	},
 /obj/docking_port/mobile{
-	can_move_docking_ports = 1;
-	port_direction = 8;
-	preferred_direction = 4;
-	dir = 2
+	port_direction = 4;
+	preferred_direction = 4
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
@@ -3491,14 +3537,15 @@
 /obj/item/gun/energy/kalix/pgf{
 	pixel_y = 6
 	},
-/obj/item/gun/energy/kalix/pistol{
-	pixel_y = -8
-	},
 /obj/item/gun/energy/kalix/pgf/nock{
 	pixel_y = -1
 	},
 /obj/structure/sign/poster/pgf/marine{
 	pixel_y = 32
+	},
+/obj/item/gun/energy/kalix/pgf/pdw{
+	pixel_x = -5;
+	pixel_y = -9
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -3520,7 +3567,7 @@
 "Us" = (
 /obj/structure/railing{
 	dir = 1;
-	layer = 2.8
+	layer = 2.7
 	},
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
@@ -3531,6 +3578,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
+	},
+/obj/structure/sign/warning/fire{
+	pixel_x = -22;
+	pixel_y = -2
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
