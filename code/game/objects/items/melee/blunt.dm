@@ -1,5 +1,6 @@
 /obj/item/melee/sledgehammer
 	name = "sledgehammer"
+	desc = "A heavy-duty hammer designed to demolish walls, break rock, and smash open doors."
 	icon_state = "sledgehammer"
 	base_icon_state = "sledgehammer"
 	icon = 'icons/obj/weapon/blunt.dmi'
@@ -35,6 +36,7 @@
 	base_icon_state = "gorlex_sledgehammer"
 	name = "breaching sledgehammer"
 	desc = "A large hammer used by the Gorlex Marauder splinters. As powerful as a weapon as it is a shipbreaking and mining tool."
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	toolspeed = 0.5
 	wall_decon_damage = MINERAL_WALL_INTEGRITY
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
